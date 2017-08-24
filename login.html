@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Kytis Hong Website</title>
@@ -11,9 +10,28 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+
+    <script>
+        function vali()
+        {
+
+            var un = document.loginform.user.value;
+            var pw = document.loginform.pwd.value;
+            var username = "User";
+            var password = "password";
+            if ((un == username) && (pw == password)) {
+                return true;
+                alert("Login Successful")
+            }
+            else{
+              alert("Invalid Credentials");
+            }
+        }
+    </script>
+
+
 </head>
 <body>
-
 <div class="active">
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -34,17 +52,19 @@
 </div>
 </nav>
 
-<form class ="left" action="hacker.html" method="post">
-    <div class="form-group">
-        <label for="username">Username:</label>
-        <input type="text" class="form-control" id="username">
-    </div>
-    <div class="form-group">
-        <label for="pwd">Password:</label>
-        <input type="password" class="form-control" id="pwd">
-    </div>
-    <button type="submit" class="btn btn-default">Submit</button>
-</form>
+<div class="left">
+    <form name='loginform' method="post" action="index.html">
+        <fieldset style="width:"35px">
+        <legend>Login Here</legend>
+        <input type="text" name="user" placeholder="Username" required>
+        <br>
+        <input type="Password" name="pwd" placeholder="Password" required>
+        <br>
+        <br>
+        <button class="btn" onclick="vali()">Submit</button>
+        </fieldset>
+    </form>
+</div>
 
 
 </body>
