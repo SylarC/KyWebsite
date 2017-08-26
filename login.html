@@ -17,10 +17,10 @@
 
             var un = document.loginform.user.value;
             var pw = document.loginform.pwd.value;
-            var username = "Neo";
-            var password = "root";
+            var username = "Ky";
+            var password = "99Sylar81";
             if ((un == username) && (pw == password)) {
-               window.location("hacker.html")
+               window.location.replace = "hacker.html";
             }
             else{
               alert("Invalid Credentials");
@@ -35,7 +35,7 @@
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">Ky's Website</a>
+                <a class="navbar-brand" href="index.html">Ky's Website</a>
             </div>
             <ul class="nav navbar-nav">
                 <li><a href="index.html">Home</a></li>
@@ -60,7 +60,7 @@
         <input type="Password" name="pwd" placeholder="Password" required>
         <br>
         <br>
-        <button class="btn" onclick="vali()">Submit</button>
+        <button class="btn" onclick="vali();">Submit</button>
         </fieldset>
     </form>
 </div>
