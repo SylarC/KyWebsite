@@ -10,41 +10,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-
-    <script>
-        function vali()
-        {
-
-            var un = document.loginform.user.value;
-            var pw = document.loginform.pwd.value;
-            var username = "Ky";
-            var password = "99Sylar81";
-            if ((un == username) && (pw == password)) {
-               window.location.replace = "hacker.html";
-            }
-            else{
-              alert("Invalid Credentials");
-            }
-        }
-    </script>
-
-
 </head>
 <body>
 <div class="active">
-    <nav class="navbar navbar-inverse">
+        <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="index.html">Ky's Website</a>
+                <a class="navbar-brand" href="#">Ky's Website</a>
             </div>
             <ul class="nav navbar-nav">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="aboutKy.html">About Ky</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="resume.html">My Resume</a></li>
                 <li><a href="contactKy.html">Contact Ky</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             </ul>
         </div>
     </nav>
@@ -52,15 +33,15 @@
 </nav>
 
 <div class="left">
-    <form name='loginform'>
-        <fieldset style="width:"35px">
+    <form method='post' action="actionpage.php">
+        <fieldset style="width:35px">
         <legend>Login Here</legend>
         <input type="text" name="user" placeholder="Username" required>
         <br>
         <input type="Password" name="pwd" placeholder="Password" required>
         <br>
         <br>
-        <button class="btn" onclick="vali();">Submit</button>
+        <input type="submit">Submit</input>
         </fieldset>
     </form>
 </div>
