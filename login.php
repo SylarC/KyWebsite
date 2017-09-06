@@ -33,7 +33,7 @@
 </nav>
 
 <div class="left">
-    <form method='post' action="actionpage.php">
+    <form method='post' action="loginaction.php">
         <fieldset style="width:35px">
         <legend>Login Here</legend>
         <input type="text" name="user" placeholder="Username" required>
