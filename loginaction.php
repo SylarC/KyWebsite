@@ -13,10 +13,10 @@ $PastaUsername = "Tsubey";
 $PastaPassword = "Pasta";
 
 if($_POST["user"] == $KyUsername && $_POST["pwd"] == $KyPassword) {
-    echo "Login Successful ";
+    header('Location: KySecret.php')
 }
 elseif($_POST["user"] == $PastaUsername && $_POST["pwd"] == $PastaPassword){
     header('Location: Tsubey.html');
 }
-
+else
 
