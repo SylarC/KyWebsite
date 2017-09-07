@@ -41,7 +41,7 @@
         <input type="Password" name="pwd" placeholder="Password" required>
         <br>
         <br>
-        <input type="submit">Submit</input>
+        <input type="submit" class="btn" ></input>
         </fieldset>
     </form>
 </div>

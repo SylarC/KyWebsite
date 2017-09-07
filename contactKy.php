@@ -36,19 +36,19 @@
 
 <form class="left" method="post" action="contactaction.php" xmlns="http://www.w3.org/1999/html">
     <div class="input-group">
-        <span class="input-group-addon"></span>
         <input id="sender" type="text" class="form-control" name="sender" placeholder="Your Email">
     </div>
     <div class="input-group">
-        <span class="input-group-addon"></span>
         <input id="subject" type="text" class="form-control" name="subject" placeholder="Subject">
     </div>
     <div class="input-group">
-        <span class="input-group-addon"></span>
         <input id="msg" type="text" class="form-control" name="msg" placeholder="Message">
     </div>
     <div class="input-group">
-        <input type="submit"></input>
+        &nbsp;
+        &nbsp;
+        
+        <input type="submit" class="btn" ></input>
     </div>
 </form>
 
