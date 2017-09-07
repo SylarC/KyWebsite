@@ -24,7 +24,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="aboutKy.html">About Ky</a></li>
                 <li><a href="resume.html">My Resume</a></li>
-                <li><a href="contactKy.html">Contact Ky</a></li>
+                <li><a href="contactKy.php">Contact Ky</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -34,13 +34,13 @@
 </div>
 </nav>
 
-<form method="post" action="contactaction.php" xmlns="http://www.w3.org/1999/html">
+<form class="left" method="post" action="contactaction.php" xmlns="http://www.w3.org/1999/html">
     <div class="input-group">
         <span class="input-group-addon"></span>
         <input id="sender" type="text" class="form-control" name="sender" placeholder="Your Email">
     </div>
     <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+        <span class="input-group-addon"></span>
         <input id="subject" type="text" class="form-control" name="subject" placeholder="Subject">
     </div>
     <div class="input-group">
