@@ -32,7 +32,7 @@
         </div>
     </nav>
 </div>
-</nav>
+
 
 <form class="left" method="post" action="contactaction.php" xmlns="http://www.w3.org/1999/html">
     <div class="input-group">
