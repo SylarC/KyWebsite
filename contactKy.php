@@ -23,7 +23,6 @@
             <ul class="nav navbar-nav">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="aboutKy.html">About Ky</a></li>
-                <li><a href="resume.html">My Resume</a></li>
                 <li><a href="contactKy.php">Contact Ky</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -48,9 +47,8 @@
         &nbsp;
         &nbsp;
         
-        <input type="submit" class="btn" ></input>
+        <input type="submit" class="btn" > </input>
     </div>
 </form>
-
 </body>
 </html>

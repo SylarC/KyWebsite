@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
-    <title>Kytis Hong Website</title>
+    <title> Ky on the Web </title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,7 +21,6 @@
             <ul class="nav navbar-nav">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="aboutKy.html">About Ky</a></li>
-                <li><a href="resume.html">My Resume</a></li>
                 <li><a href="contactKy.php">Contact Ky</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -32,7 +31,7 @@
 </div>
 </nav>
 
-<div class="left">
+<div class="center">
     <form method='post' action="loginaction.php">
         <fieldset style="width:35px">
         <legend>Login Here</legend>
@@ -41,7 +40,7 @@
         <input type="Password" name="pwd" placeholder="Password" required>
         <br>
         <br>
-        <input type="submit" class="btn" ></input>
+        <input type="submit" class="btn" > </input>
         </fieldset>
     </form>
 </div>
