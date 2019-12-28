@@ -31,7 +31,7 @@
 </div>
 </nav>
 
-<div class="center">
+<div class="left">
     <form method='post' action="loginaction.php">
         <fieldset style="width:35px">
         <legend>Login Here</legend>

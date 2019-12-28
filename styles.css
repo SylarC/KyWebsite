@@ -2,6 +2,10 @@ body{
     background-color: #808080
 }
 
+p{
+    color: white
+}
+
 .left {
     float: left;
     left: 75px;
