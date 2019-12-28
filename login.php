@@ -22,7 +22,6 @@
             background-color: #3D3634;
         }
     </style>
-
 </head>
 <body>
 <div class="active">
@@ -46,7 +45,7 @@
 <div class="left">
     <form method='post' action="loginaction.php">
         <fieldset style="width:35px">
-        <legend>Login Here</legend>
+        <legend>Login:</legend>
         <input type="text" name="user" placeholder="Username" required>
         <br>
         <input type="Password" name="pwd" placeholder="Password" required>
