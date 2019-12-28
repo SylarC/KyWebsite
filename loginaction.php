@@ -6,16 +6,19 @@
  * Time: 8:58 PM
  */
 
-$KyUsername = "Ky";
-$KyPassword = "WhiteHat";
+$KyUsr = "Ky";
+$KyPwd = "0103";
 
-$PastaUsername = "Tsubey";
-$PastaPassword = "Pasta";
+$DownloadUsr = "admin";
+$DownloadPwd = "download";
 
-if($_POST["user"] == $KyUsername && $_POST["pwd"] == $KyPassword) {
-    header('Location: KyWhiteHat.php');
-}
-elseif($_POST["user"] == $PastaUsername && $_POST["pwd"] == $PastaPassword){
-    header('Location: Tsubey.html');
-}
+    if($_POST["user"] == $KyUsr && $_POST["pwd"] == $KyPwd) {
+        header('Location: KyWhiteHat.php');
+    }
+    elseif($_POST["user"] == $DownloadUsr && $_POST["pwd"] == $DownloadPwd){
+        header('Location: download.html');
+    }
+    else{
+        header('Location loginerror.html');
+    }
 ?>
