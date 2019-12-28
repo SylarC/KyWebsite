@@ -11,6 +11,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+    <style>
+        /* Remove the navbar's default margin-bottom and rounded borders */
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+
+        /* Add a gray background color and some padding to the footer */
+        footer {
+            background-color: #3D3634;
+        }
+    </style>
 </head>
 <body>
 
@@ -44,9 +56,7 @@
         <input id="msg" type="text" class="form-control" name="msg" placeholder="Message">
     </div>
     <div class="input-group">
-        &nbsp;
-        &nbsp;
-        
+        <br>
         <input type="submit" class="btn" > </input>
     </div>
 </form>
