@@ -1,3 +1,15 @@
+<?php
+session_start();
+while(true){
+    if($_SESSION['AdminLogin'] == 'ncji3857sdiv2l3v-sofj3jvnslifh20v3-fn3kvnu38f'){
+        break;
+    }
+    else{
+        header('Location: noauth.html');
+    }
+}
+?>
+
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
@@ -9,6 +21,7 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <style>
         /* Remove the navbar's default margin-bottom and rounded borders */
         .navbar {
@@ -21,7 +34,6 @@
             background-color: #3D3634;
         }
     </style>
-
 </head>
 <body>
 <div class="active">
@@ -43,11 +55,18 @@
 </div>
 
 <div class="left">
-    <a href="birthdayCard.jpg" download="birthdayCard.jpg">
-        <img src="birthdayCardLogo.jpg" alt="BirthdayCardBa2019" width="400">
-    </a>
-    &nbsp
-    <p>    No Google Translate was used in the making of this card</p>
+    <form method='post' action="loginaction.php">
+        <fieldset style="width:35px">
+            <legend>Add Login:</legend>
+            <input type="text" name="useradd" placeholder="Username" required>
+            <br>
+            <input type="Password" name="pwdadd" placeholder="Password" required>
+            <br>
+            <input type="text" name="dir" placeholder="Directory" required>
+            <br>
+            <input type="submit" class="btn" > </input>
+        </fieldset>
+    </form>
 </div>
 </body>
 </html>
