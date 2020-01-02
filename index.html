@@ -1,42 +1,29 @@
 <!DOCTYPE html>
 <html id="index" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title> Ky on the Web </title>
-
+    <!-- Theme Made By www.w3schools.com - No Copyright -->
+    <title>Ky's Website</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    <style>
-        /* Remove the navbar's default margin-bottom and rounded borders */
-        .navbar {
-            margin-bottom: 0;
-            border-radius: 0;
-        }
-
-        /* Add a gray background color and some padding to the footer */
-        footer {
-            background-color: #3D3634;
-        }
-    </style>
-
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 
 <div class="active">
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
+    <nav class="navbar navbar-default">
+        <div class="container-">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">Ky's Website</a>
+                <a class="navbar-brand" href="index.html">Ky's Website</a>
             </div>
             <ul class="nav navbar-nav">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="aboutKy.html">About Ky</a></li>
-                <li><a href="contactKy.php">Contact Ky</a></li>
+                <li><a href="robotics.php">Robotics</a></li>
+                <li><a href="pictures.php">Pictures</a></li>
+                <li><a href="followme.html">Follow Me!</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -45,11 +32,47 @@
     </nav>
 </div>
 
-<div class="jumbotron">
-    <div class="container tex t-center">
-        <h1>Ky's Website</h1>
-    </div>
+<!-- First Container -->
+<div class="container-fluid bg-1 text-center">
+    <h3 class="margin">Who Am I?</h3>
+    <img src="happyseal.jpg" class="img-responsive img-circle margin" style="display:inline" alt="Seal" width="300" height="300">
+    <h3>I'm Ky</h3>
+    <p> I code, do robotics, skateboard, and act like I know what I am doing</p>
 </div>
+
+<!--
+Second Container:
+    <div class="container-fluid bg-2 text-center">
+        <h3 class="margin">What Am I?</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        <a href="#" class="btn btn-default btn-lg">
+            <span class="glyphicon glyphicon-search"></span> Search
+        </a>
+    </div>
+Third Container (Grid):
+    <div class="container-fluid bg-3 text-center">
+        <h3 class="margin">Where To Find Me?</h3><br>
+        <div class="row">
+            <div class="col-sm-4">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <img src="birds1.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+            </div>
+            <div class="col-sm-4">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <img src="birds2.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+            </div>
+            <div class="col-sm-4">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <img src="birds3.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+            </div>
+        </div>
+    </div>
+-->
+
+<!-- Footer -->
+<footer class="container-fluid bg-4 text-center">
+    <p>Website by Ky, theme from <a href="https://www.w3schools.com">www.w3schools.com</a></p>
+</footer>
 
 </body>
 </html>

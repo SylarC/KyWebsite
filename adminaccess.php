@@ -39,8 +39,8 @@
             </div>
             <ul class="nav navbar-nav">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="aboutKy.html">About Ky</a></li>
-                <li><a href="contactKy.php">Contact Ky</a></li>
+                <li><a href="pictures.php">About Ky</a></li>
+                <li><a href="robotics.php">Contact Ky</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
