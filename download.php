@@ -1,13 +1,8 @@
 <?php
-session_start();
-while(true){
-    if($_SESSION['DownloadLogin'] == 'asdjkfj37y94848ghsldkvbowiehlskdnfb3kif'){
-        break;
-    }
-    else{
+    session_start();
+    if($_SESSION['DownloadLogin'] != 'asdjkfj37y94848ghsldkvbowiehlskdnfb3kif'){
         header('Location: noauth.html');
     }
-}
 ?>
 
 <!DOCTYPE html>

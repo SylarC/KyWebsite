@@ -1,13 +1,8 @@
 <?php
-session_start();
-while(true){
-    if($_SESSION['AdminLogin'] == 'ncji3857sdiv2l3v-sofj3jvnslifh20v3-fn3kvnu38f'){
-        break;
-    }
-    else{
+    session_start();
+    if($_SESSION['AdminLogin'] != 'ncji3857sdiv2l3v-sofj3jvnslifh20v3-fn3kvnu38f'){
         header('Location: noauth.html');
     }
-}
 ?>
 
 <!DOCTYPE html>
