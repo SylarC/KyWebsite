@@ -1,9 +1,11 @@
 body {
+    background-color: black;
     font-family: 'Comfortaa', cursive;
     line-height: 1.8;
     color: #f5f6f7;
 }
 p {font-size: 16px;}
+/*Index*/
 .margin {margin-bottom: 45px;}
 .bg-1 {
     background-color: #1abc9c; /* Green */
@@ -38,11 +40,7 @@ p {font-size: 16px;}
     color: #1abc9c !important;
 }
 
-body {
-    font-family: Arial;
-    margin: 0;
-}
-
+/*Image*/
 * {
     box-sizing: border-box;
 }
@@ -137,12 +135,8 @@ img {
     box-sizing: border-box;
 }
 
-/* Add a gray background color with some padding */
-body {
-    font-family: Arial;
-    padding: 20px;
-    background: #f1f1f1;
-}
+/*Blog, Robotics Page*/
+
 
 /* Header/Blog Title */
 .header {
@@ -161,16 +155,9 @@ body {
 
 /* Right column */
 .rightcolumn {
-    float: left;
+    float: right;
     width: 25%;
-    padding-left: 20px;
-}
-
-/* Fake image */
-.fakeimg {
-    background-color: #aaa;
-    width: 100%;
-    padding: 20px;
+    padding-right: 20px;
 }
 
 /* Add a card effect for articles */
@@ -195,6 +182,10 @@ body {
     margin-top: 20px;
 }
 
+.blog{
+    color:black;
+}
+
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 800px) {
     .leftcolumn, .rightcolumn {
@@ -206,6 +197,18 @@ body {
 /* Login Form */
 
 form {border: 3px solid #f1f1f1;}
+
+label{
+    color:black;
+}
+
+legend{
+    color:black;
+}
+
+input{
+    color:black;
+}
 
 input[type=text], input[type=password] {
     width: 100%;
