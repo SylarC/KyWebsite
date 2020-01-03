@@ -1,7 +1,6 @@
 body {
     font-family: 'Comfortaa', cursive;
     line-height: 1.8;
-    color: black;
 }
 p {font-size: 16px;}
 
@@ -17,15 +16,6 @@ p {font-size: 16px;}
 .navbar-nav  li a:hover {
     color: #1abc9c !important;
 }
-
-
-/* Add a gray background color with some padding
-body {
-    font-family: Arial;
-    padding: 20px;
-    background: #f1f1f1;
-}
-*/
 
 
 

@@ -36,7 +36,7 @@
 <!-- First Container -->
 <h2>Login Form</h2>
 
-<form action="php/loginaction.php" method="post">
+<form action="loginaction.php" method="post">
     <div class="container">
         <label for="user"><b>Username</b></label>
         <input type="text" placeholder="Enter Username" name="user" required>
