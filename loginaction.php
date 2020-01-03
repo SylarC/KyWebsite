@@ -23,7 +23,6 @@ $DownloadPwd = "download";
         header('Location: download.php');
     }
     else{
-        $_SESSION['AdminLogin'] = 'InvalidLoginPoser!';
         header('Location loginerror.html');
     }
 ?>
