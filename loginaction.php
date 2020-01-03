@@ -23,6 +23,6 @@ $DownloadPwd = "download";
         header('Location: download.php');
     }
     else{
-        header('Location loginerror.html');
+        header('Location: loginerror.html');
     }
 ?>
