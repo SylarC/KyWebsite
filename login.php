@@ -47,10 +47,5 @@
     </div>
 </form>
 
-<footer class="container-fluid bg-4 text-center">
-    <p>Website by Ky, theme from <a href="https://www.w3schools.com">www.w3schools.com</a></p>
-</footer>
-
-
 </body>
 </html>

@@ -1,7 +1,7 @@
 <?php
     session_start();
     if($_SESSION['AdminLogin'] != 'ncji3857sdiv2l3v-sofj3jvnslifh20v3-fn3kvnu38f'){
-        header('Location: errorPages/noauth.html');
+        header('Location: noauth.html');
     }
 ?>
 
