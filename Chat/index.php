@@ -1,103 +1,210 @@
-<html>
+<?php
+session_start ();
+function loginForm() {
+    echo '
+    <div id="loginform">
+    <form action="index.php" method="post">
+        <p>Please enter your name to continue:</p>
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" />
+        <input type="submit" name="enter" id="enter" value="Enter" />
+    </form>
+    </div>
+    ';
+}
+
+if (isset ( $_POST ['enter'] )) {
+    if ($_POST ['name'] != "") {
+        $_SESSION ['name'] = stripslashes ( htmlspecialchars ( $_POST ['name'] ) );
+        $fp = fopen ( "log.html", 'a' );
+        fwrite ( $fp, "<div class='msgln'><i>User " . $_SESSION ['name'] . " has joined the chat session.</i><br></div>" );
+        fclose ( $fp );
+    } else {
+        echo '<span class="error">Please type in a name</span>';
+    }
+}
+
+if (isset ( $_GET ['logout'] )) {
+
+    // Simple exit message
+    $fp = fopen ( "log.html", 'a' );
+    fwrite ( $fp, "<div class='msgln'><i>User " . $_SESSION ['name'] . " has left the chat session.</i><br></div>" );
+    fclose ( $fp );
+
+    session_destroy ();
+    header ( "Location: index.php" ); // Redirect the user
+}
+
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>ajax chat (room 1)</title>
-    <style type="text/css">
-        body             { padding-left:40px; background:#57767F; font-family:arial;}
-        input, textarea  { font-family: courier new; font-size: 12px; }
-        #content         { width:800px; text-align:left; margin-left:60px; }
+    <style>
+        body {
+            font: 12px arial;
+            color: #222;
+            text-align: center;
+            padding: 35px;
+        }
 
-        #chatwindow      { border:1px solid #aaaaaa; padding:4px; background:#232D2F; color:white;}
-        #chatnick        { border: none; border-bottom:1px solid #aaaaaa; padding:4px; background:#57767F;}
-        #chatmsg         { border: none; border-bottom:1px solid #aaaaaa; padding:4px; background:#57767F; }
+        form,p,span {
+            margin: 0;
+            padding: 0;
+        }
 
-        #info            { text-align:left; padding-left:0px; font-family:arial; }
-        #info td         { font-size:12px; padding-right:10px; color:#DFDFDF;  }
-        #info .small     { font-size:10px; padding-left:10px; padding-right:0px; }
+        input {
+            font: 12px arial;
+        }
 
-        #info a          { text-decoration:none; color:white; }
-        #info a:hover    { text-decoration:underline; color:#CF9700; }
+        a {
+            color: #0000FF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        #wrapper,#loginform {
+            margin: 0 auto;
+            padding-bottom: 25px;
+            background: #EBF4FB;
+            width: 504px;
+            border: 1px solid #ACD8F0;
+        }
+
+        #loginform {
+            padding-top: 18px;
+        }
+
+        #loginform p {
+            margin: 5px;
+        }
+
+        #chatbox {
+            text-align: left;
+            margin: 0 auto;
+            margin-bottom: 25px;
+            padding: 10px;
+            background: #fff;
+            height: 270px;
+            width: 430px;
+            border: 1px solid #ACD8F0;
+            overflow: auto;
+        }
+
+        #usermsg {
+            width: 395px;
+            border: 1px solid #ACD8F0;
+        }
+
+        #submit {
+            width: 60px;
+        }
+
+        .error {
+            color: #ff0000;
+        }
+
+        #menu {
+            padding: 12.5px 25px 12.5px 25px;
+        }
+
+        .welcome {
+            float: left;
+        }
+
+        .logout {
+            float: right;
+        }
+
+        .msgln {
+            margin: 0 0 2px 0;
+        }
     </style>
+    <title>Chat - Customer Module</title>
 </head>
 <body>
-<div id="info">
-    <br>
-    <table border="0">
-        <tr>
-            <td colspan="2">
-                <a href="/projects/most-simple-ajax-chat-ever/"><font style="font-size:14px">most simple ajax chat</a> (v3)</font><br>
-            </td>
-        </tr>
-        <tr>
-            <td class="small">author</td>
-            <td class="small"><a href="mailto:chris@linuxuser.at">chris at linuxuser dot at</a></td>
-        </tr>
-        <tr>
-            <td class="small">home</td>
-            <td class="small"><a href="/projects/most-simple-ajax-chat-ever/">www.linuxuser.at</a></td>
-        </tr>
-        <tr>
-            <td class="small">source</td>
-            <td class="small"><a href="https://github.com/metachris/most-simple-ajax-chat-ever">Github</a></td>
-        </tr>
-        <tr><td>&nbsp;</td></tr>
-        <tr>
-            <td colspan="2" class="small">toggle: <a href="#" onclick="javascript:show_newmsg_on_bottom=!show_newmsg_on_bottom">top/bottom display</a> | <a href="#" onclick="javascript:chatwindow.style.fontWeight= (chatwindow.style.fontWeight=='bold') ? 'normal' : 'bold';">bold</a></td>
-        </tr>
-    </table>
+<?php
+if (! isset ( $_SESSION ['name'] )) {
+    loginForm ();
+} else {
+    ?>
+    <div id="wrapper">
+        <div id="menu">
+            <p class="welcome">
+                Welcome, <b><?php echo $_SESSION['name']; ?></b>
+            </p>
+            <p class="logout">
+                <a id="exit" href="#">Exit Chat</a>
+            </p>
+            <div style="clear: both"></div>
+        </div>
+        <div id="chatbox"><?php
+            if (file_exists ( "log.html" ) && filesize ( "log.html" ) > 0) {
+                $handle = fopen ( "log.html", "r" );
+                $contents = fread ( $handle, filesize ( "log.html" ) );
+                fclose ( $handle );
 
-</div>
-<br>
-<div id="content">
-    <textarea id="chatwindow" rows="19" cols="95" readonly></textarea><br>
+                echo $contents;
+            }
+            ?></div>
 
-    <input id="chatnick" type="text" size="9" maxlength="10" placeholder="username">&nbsp;
-    <input id="chatmsg" type="text" size="80" maxlength="80"  onkeyup="keyup(event.keyCode);" placeholder="message">
-    <input type="button" value="add" onclick="submit_msg();" style="cursor:pointer;border:1px solid gray;"><br><br>
-</div>
+        <form name="message" action="">
+            <input name="usermsg" type="text" id="usermsg" size="63" /> <input
+                name="submitmsg" type="submit" id="submitmsg" value="Send" />
+        </form>
+    </div>
+    <script type="text/javascript"
+            src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        // jQuery Document
+        $(document).ready(function(){
+        });
 
+        //jQuery Document
+        $(document).ready(function(){
+            //If user wants to end session
+            $("#exit").click(function(){
+                var exit = confirm("Are you sure you want to end the session?");
+                if(exit==true){window.location = 'index.php?logout=true';}
+            });
+        });
+
+        //If user submits the form
+        $("#submitmsg").click(function(){
+            var clientmsg = $("#usermsg").val();
+            $.post("post.php", {text: clientmsg});
+            $("#usermsg").attr("value", "");
+            loadLog;
+            return false;
+        });
+
+        function loadLog(){
+            var oldscrollHeight = $("#chatbox").attr("scrollHeight") - 20; //Scroll height before the request
+            $.ajax({
+                url: "log.html",
+                cache: false,
+                success: function(html){
+                    $("#chatbox").html(html); //Insert chat log into the #chatbox div
+
+                    //Auto-scroll
+                    var newscrollHeight = $("#chatbox").attr("scrollHeight") - 20; //Scroll height after the request
+                    if(newscrollHeight > oldscrollHeight){
+                        $("#chatbox").animate({ scrollTop: newscrollHeight }, 'normal'); //Autoscroll to bottom of div
+                    }
+                },
+            });
+        }
+
+        setInterval (loadLog, 2500);
+    </script>
+    <?php
+}
+?>
+<script type="text/javascript"
+        src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+<script type="text/javascript">
+</script>
 </body>
 </html>
-
-<script type="text/javascript">
-    /* most simple ajax chat script (www.linuxuser.at) (GPLv2) */
-    var nick_maxlength=10;
-    var http_request=false;
-    var http_request2=false;
-    var intUpdate;
-
-    /* http_request for writing */
-    function ajax_request(url){http_request=false;if(window.XMLHttpRequest){http_request=new XMLHttpRequest();if(http_request.overrideMimeType){http_request.overrideMimeType('text/xml');}}else if(window.ActiveXObject){try{http_request=new ActiveXObject("Msxml2.XMLHTTP");}catch(e){try{http_request=new ActiveXObject("Microsoft.XMLHTTP");}catch(e){}}}
-        if(!http_request){alert('Giving up :( Cannot create an XMLHTTP instance');return false;}
-        http_request.onreadystatechange=alertContents;http_request.open('GET',url,true);http_request.send(null);}
-    function alertContents(){if(http_request.readyState==4){if(http_request.status==200){rec_response(http_request.responseText);}else{}}}
-
-    /* http_request for reading */
-    function ajax_request2(url){http_request2=false;if(window.XMLHttpRequest){http_request2=new XMLHttpRequest();if(http_request2.overrideMimeType){http_request2.overrideMimeType('text/xml');}}else if(window.ActiveXObject){try{http_request2=new ActiveXObject("Msxml2.XMLHTTP");}catch(e){try{http_request2=new ActiveXObject("Microsoft.XMLHTTP");}catch(e){}}}
-        if(!http_request2){alert('Giving up :( Cannot create an XMLHTTP instance');return false;}
-        http_request2.onreadystatechange=alertContents2;http_request2.open('GET',url,true);http_request2.send(null);}
-    function alertContents2(){if(http_request2.readyState==4){if(http_request2.status==200){rec_chatcontent(http_request2.responseText);}else{}}}
-
-    /* chat stuff */
-    chatmsg.focus()
-    var show_newmsg_on_bottom=1;     /* set to 0 to let new msg´s appear on top */
-    var waittime=3000;        /* time between chat refreshes (ms) */
-
-    intUpdate=window.setTimeout("read_cont();", waittime);
-    chatwindow.value = "loading...";
-
-    function read_cont()         { zeit = new Date(); ms = (zeit.getHours() * 24 * 60 * 1000) + (zeit.getMinutes() * 60 * 1000) + (zeit.getSeconds() * 1000) + zeit.getMilliseconds(); ajax_request2("chat.txt?x=" + ms); }
-    function display_msg(msg1)     { chatwindow.value = msg1.trim(); }
-    function keyup(arg1)         { if (arg1 == 13) submit_msg(); }
-    function submit_msg()         { clearTimeout(intUpdate); if (chatnick.value == "") { check = prompt("please enter username:"); if (check === null) return 0; if (check == "") check="..."; chatnick.value=check; } if (chatnick.value.length > nick_maxlength) chatnick.value=chatnick.value.substring(0,nick_maxlength); spaces=""; for(i=0;i<(nick_maxlength-chatnick.value.length);i++) spaces+=" "; v=chatwindow.value.substring(chatwindow.value.indexOf("\n")) + "\n" + chatnick.value + spaces + "| " + chatmsg.value; if (chatmsg.value != "") chatwindow.value=v.substring(1); write_msg(chatmsg.value,chatnick.value); chatmsg.value=""; intUpdate=window.setTimeout("read_cont();", waittime);}
-    function write_msg(msg1,nick1)     { ajax_request("w.php?m=" + escape(msg1) + "&n=" + escape(nick1)); }
-    function rec_response(str1)     { }
-
-    function rec_chatcontent(cont1) {
-        if (cont1 != "") {
-            out1 = unescape(cont1);
-            if (show_newmsg_on_bottom == 0) { out1 = ""; while (cont1.indexOf("\n") > -1) { out1 = cont1.substr(0, cont1.indexOf("\n")) + "\n" + out1; cont1 = cont1.substr(cont1.indexOf("\n") + 1); out1 = unescape(out1); } }
-            if (chatwindow.value != out1) { display_msg(out1); }
-            intUpdate=window.setTimeout("read_cont()", waittime);
-        }
-    }
-</script>
