@@ -13,6 +13,9 @@ $KyPwd = "0103";
 $DownloadUsr = "admin";
 $DownloadPwd = "download";
 
+$ChatUsr = "Guest";
+$ChatPwd = "Guest1";
+
     if($_POST["user"] == $KyUsr && $_POST["pwd"] == $KyPwd) {
         $_SESSION['AdminLogin'] = 'ncji3857sdiv2l3v-sofj3jvnslifh20v3-fn3kvnu38f';
         $_SESSION['DownloadLogin'] = 'asdjkfj37y94848ghsldkvbowiehlskdnfb3kif';
@@ -22,6 +25,11 @@ $DownloadPwd = "download";
         $_SESSION['DownloadLogin'] = 'asdjkfj37y94848ghsldkvbowiehlskdnfb3kif';
         header('Location: download.php');
     }
+    elseif($_POST["user"] == $ChatUsr && $_POST["pwd"] == $ChatPwd){
+        $_SESSION['DownloadLogin'] = 'asdjkfj37y94848ghsldkvbowiehlskdnfb3kif';
+        header('Location: Chat/index.php');
+    }
+
     else{
         header('Location: loginerror.html');
     }
