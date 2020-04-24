@@ -163,12 +163,13 @@ if (!isset ($_SESSION ['name'])) {
     <script type="text/javascript"
             src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
     <script type="text/javascript">
-        window.onbeforeunload = function () {
-            var exit = confirm("Are you sure you want to end the session?");
-            if (exit == true) {
-                window.location = 'index.php?logout=true';
-            }
+        function wipeChat(){
+            window.location = 'index.php?logout=true';
         }
+        $(window).bind('beforeunload', function(){
+            wipeChat();
+            return 'Are you sure you want to leave?';
+        });
         // jQuery Document
         $(document).ready(function () {
         });
