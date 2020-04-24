@@ -18,7 +18,7 @@ if (isset ( $_POST ['enter'] )) {
         $_SESSION ['name'] = stripslashes ( htmlspecialchars ( $_POST ['name'] ) );
         $fp = fopen ( "log.html", 'a' );
         fwrite ( $fp, "<div class='msgln'><i>User " . $_SESSION ['name'] . " has joined the chat session.</i><br></div>" );
-        fclose ( $fp );
+        ftruncate($fp, 0);
     } else {
         echo '<span class="error">Please type in a name</span>';
     }
