@@ -166,7 +166,7 @@ if (!isset ($_SESSION ['name'])) {
         function wipeChat(){
             window.location = 'index.php?logout=true';
         }
-        $(window).bind('beforeunload', function(){
+        $(document).bind('beforeunload', function(){
             wipeChat();
             return 'Are you sure you want to leave?';
         });
