@@ -29,6 +29,7 @@ if (isset ( $_GET ['logout'] )) {
     // Simple exit message
     $fp = fopen ( "log.html", 'a' );
     fwrite ( $fp, "<div class='msgln'><i>User " . $_SESSION ['name'] . " has left the chat session.</i><br></div>" );
+    fwrite($fp, "");
     fclose ( $fp );
 
     session_destroy ();
@@ -167,7 +168,9 @@ if (! isset ( $_SESSION ['name'] )) {
             //If user wants to end session
             $("#exit").click(function(){
                 var exit = confirm("Are you sure you want to end the session?");
-                if(exit==true){window.location = 'index.php?logout=true';}
+                if(exit==true){
+                    window.location = 'index.php?logout=true';
+                }
             });
         });
 
