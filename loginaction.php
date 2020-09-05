@@ -13,8 +13,8 @@ $KyPwd = "0103";
 $DownloadUsr = "admin";
 $DownloadPwd = "download";
 
-$ChatUsr = "Guest";
-$ChatPwd = "Guest1";
+$ChatUsr = "GuestUsr";
+$ChatPwd = "GuestPwd";
 
     if($_POST["user"] == $KyUsr && $_POST["pwd"] == $KyPwd) {
         $_SESSION['AdminLogin'] = 'ncji3857sdiv2l3v-sofj3jvnslifh20v3-fn3kvnu38f';

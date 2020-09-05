@@ -1,8 +1,8 @@
 <?php
-    session_start();
-    if($_SESSION['AdminLogin'] != 'ncji3857sdiv2l3v-sofj3jvnslifh20v3-fn3kvnu38f'){
-        header('Location: noauth.html');
-    }
+session_start();
+if($_SESSION['AdminLogin'] != 'ncji3857sdiv2l3v-sofj3jvnslifh20v3-fn3kvnu38f'){
+    header('Location: noauth.html');
+}
 ?>
 
 <!DOCTYPE html>
@@ -20,13 +20,13 @@
 
 </head>
 <body>
-    <a href="index.html" class="btn btn-default btn-lg">
-        School Portal
-    </a>
+<a href="index.html" class="btn btn-default btn-lg">
+    School Portal
+</a>
 
-    <a href="calender.html" class="btn btn-default btn-lg">
-        Calendar
-    </a>
+<a href="calender.html" class="btn btn-default btn-lg">
+    Calendar
+</a>
 
 
 </body>
